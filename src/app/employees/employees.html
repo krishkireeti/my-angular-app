@@ -1,0 +1,36 @@
+<h2>Employee Management</h2>
+
+<button (click)="loadEmployees()">Load Employees</button>
+
+<!--Loading state-->
+<p *ngIf="loading()">Loading employees...</p>
+
+<!--Error state-->
+<p *ngIf="errorMessage()" class="error">
+    {{ errorMessage() }}
+</p>
+
+<!--Employee table-->
+<table *ngIf="!loading() && !errorMessage()">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let employee of employees()">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.username }}</td>
+            <td>{{ employee.email }}</td>
+        </tr>
+
+        <tr *ngIf="employees().length === 0">
+            <td colspan="4">No employees found.</td>
+        </tr>
+    </tbody>
+</table>

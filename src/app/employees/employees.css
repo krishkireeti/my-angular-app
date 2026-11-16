@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #f2f2f2;
+}
+
+button {
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
